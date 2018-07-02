@@ -219,7 +219,10 @@ namespace ControlDesigner.ViewModels
         private async void SetContent(object obj)
         {
             Type controlToAdd = await DialogHelper.PickControlAsync(); //PICK CONTROL
-            _propContent.SetValue(this.Control, (View)Activator.CreateInstance(controlToAdd));
+            var newControl = (View)Activator.CreateInstance(controlToAdd);
+            _propContent.SetValue(this.Control, newControl);
+            Navigation.PopPopuopToRoot();
+            Navigation.PushPropertiesPopup(newControl);
         }
 
         private void ClearChildren(object obj)

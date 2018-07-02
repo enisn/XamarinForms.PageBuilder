@@ -22,7 +22,7 @@
                 HasUnevenRows="True">
                 <ListView.Header>
                     <Grid Margin="15,15,15,0">
-                        <Label FontAttributes="Italic" TextColor="Accent" Text="Choose a layout to start designing..." />
+                        <Label FontAttributes="Italic" TextColor="Accent" Text="Choose a layout to start designing..." HorizontalTextAlignment="Center" />
                     </Grid>
                 </ListView.Header>
                 <ListView.ItemTemplate>

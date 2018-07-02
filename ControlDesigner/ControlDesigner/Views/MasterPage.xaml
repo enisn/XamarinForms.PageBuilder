@@ -33,10 +33,10 @@
                 </ListView.ItemTemplate>
             </ListView>-->
 
-            <Image Source="icon.png" HorizontalOptions="Center" Margin="20"/>
+            <Image Source="Icon.png" HorizontalOptions="Center" Margin="20"/>
 
             <Label Text="Xamarin Forms Page Builder" FontAttributes="Bold" FontSize="Large" Margin="10,0" HorizontalTextAlignment="Center" />
-            <Label Text="OpenSource Page Builder App." Opacity="0.8"/>
+            <Label Text="OpenSource Page Builder App." Opacity="0.8" HorizontalOptions="Center"/>
 
 
 
