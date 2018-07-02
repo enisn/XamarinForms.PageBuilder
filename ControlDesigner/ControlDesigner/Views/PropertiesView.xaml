@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControlDesigner.Views.PropertiesView"
+             xmlns:helper="clr-namespace:ControlDesigner.Helpers"
+             Margin="30,20">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <helper:ViewToNameConverter x:Key="NameConverter"/>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+      <StackLayout BackgroundColor="#92FFFFFF" Spacing="0">
+            <Grid HorizontalOptions="Fill">
+                <Button Image="eye.png" Clicked="Eye_Clicked" HorizontalOptions="StartAndExpand"/>
+                <Button Image="cancel.png" BackgroundColor="Accent" Command="{Binding Navigation.PopPopupCommand}" HorizontalOptions="EndAndExpand"/>
+            </Grid>
+            <StackLayout>
+                <Label Margin="5,2" Text="{Binding Control,Converter={StaticResource NameConverter}}"  FontSize="Micro" HorizontalOptions="Center"/>
+                <StackLayout Padding="10,0">
+                    <Button Text="Remove Control" BackgroundColor="Red" Command="{Binding RemoveControlCommand}" HorizontalOptions="FillAndExpand" TextColor="White"/>
+                    <Button IsVisible="{Binding DoesHaveContent}" Command="{Binding SetContentCommand}" Text="Set Content" HorizontalOptions="FillAndExpand"/>
+                    <Button IsVisible="{Binding DoesHaveChildren}" Command="{Binding AddChildrenCommand}" Text="Add Children" HorizontalOptions="FillAndExpand" />
+                    <Button IsVisible="{Binding DoesHaveChildren}" Command="{Binding ClearChildrenCommand}" Text="Clear Children" BackgroundColor="Accent" HorizontalOptions="FillAndExpand" TextColor="White"/>
+                    <Button IsVisible="{Binding DoesHaveContent}" Command="{Binding ClearContentCommand}" Text="Clear Content" BackgroundColor="Accent" HorizontalOptions="FillAndExpand" TextColor="White"/>
+                </StackLayout>
+            </StackLayout>
+            <ListView 
+                ItemsSource="{Binding PropertiesList}"
+                HasUnevenRows="True"
+                SeparatorVisibility="Default" 
+                SelectedItem="{Binding SelectedProperty}"
+                ItemSelected="ListView_ItemSelected"
+                >
+               
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Margin="10" Padding="10">
+                                <Label Text="{Binding Name}" FontAttributes="Bold" HorizontalOptions="FillAndExpand"/>
+                                <Label Text="{Binding Value}" Opacity="0.8" HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+                
+            </ListView>
+          
+      </StackLayout>
+  </ContentView.Content>
+</ContentView>

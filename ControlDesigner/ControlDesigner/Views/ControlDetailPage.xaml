@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<page:EditorPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControlDesigner.Views.ControlDetailPage"
+             xmlns:page="clr-namespace:ControlDesigner.Pages"
+             xmlns:vm="clr-namespace:ControlDesigner.ViewModels"
+                 Content="{Binding Control}">
+    <!--<ContentPage.BindingContext>
+        <vm:ControlDetailViewModel/>
+    </ContentPage.BindingContext>-->
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="edit.png" Text="Properties" Command="{Binding EditPropertiesCommand}" CommandParameter="{Binding Control}"/>
+    </ContentPage.ToolbarItems>
+
+</page:EditorPage>

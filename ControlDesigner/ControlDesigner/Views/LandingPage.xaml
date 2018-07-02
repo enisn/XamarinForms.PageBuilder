@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControlDesigner.Views.LandingPage">
+    <ContentPage.Content>
+        <StackLayout Padding="25" VerticalOptions="CenterAndExpand">
+            <Label Text="Welcome Here" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center"/>
+            <Label Text="You can find Xamarin Froms controls here to test them." Opacity="0.8" HorizontalOptions="Center"/>
+
+            <Button Text="Let's Start" TextColor="White" BackgroundColor="Accent" Clicked="Button_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

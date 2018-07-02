@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ControlDesigner.Views.LayoutSelectionPage"
+             xmlns:vm="clr-namespace:ControlDesigner.ViewModels"
+             xmlns:helper ="clr-namespace:ControlDesigner.Helpers">
+    <ContentPage.BindingContext>
+        <vm:LayoutSelectionViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <helper:ViewToNameConverter x:Key="NameConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView 
+                ItemsSource="{Binding LayoutsList}"
+                SelectedItem="{Binding SelectedLayout}"
+                ItemSelected="ListView_ItemSelected"
+                HasUnevenRows="True">
+                <ListView.Header>
+                    <Grid Margin="15,15,15,0">
+                        <Label FontAttributes="Italic" TextColor="Accent" Text="Choose a layout to start designing..." />
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Margin="20" Padding="10">
+                                <Label Text="{Binding .,Converter={StaticResource NameConverter}}" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
