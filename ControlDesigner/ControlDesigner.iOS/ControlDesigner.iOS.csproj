@@ -179,4 +179,22 @@
   <ItemGroup>
     <BundleResource Include="Resources\eye%403x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\code.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\code%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\code%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\info%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\info%403x.png" />
+  </ItemGroup>
 </Project>

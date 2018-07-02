@@ -16,6 +16,7 @@ namespace ControlDesigner.ViewModels
         public static MasterDetailPage MasPage => Application.Current.MainPage is MasterDetailPage ? Application.Current.MainPage as MasterDetailPage : null;
         public Command GoControlDetailCommand { get; set; }
         public Command PushPropertiesPopupCommand { get; private set; }
+        public Command OpenUriCommand { get; set; }
 
         public Task DisplayAlert(string title, string message, string cancel)
         {
@@ -32,6 +33,19 @@ namespace ControlDesigner.ViewModels
 
             GoControlDetailCommand = new Command(GoControlDetail);
             PushPropertiesPopupCommand = new Command(PushPropertiesPopup);
+            OpenUriCommand = new Command(OpenUri);
+        }
+
+        private void OpenUri(object obj)
+        {
+            try
+            {
+                Device.OpenUri(new Uri(obj.ToString()));
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
+            }
         }
 
         public void PushPropertiesPopup(object obj)

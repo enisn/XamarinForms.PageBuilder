@@ -15,7 +15,7 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <ListView
+            <!--<ListView
                       ItemsSource="{Binding ViewsList}"
                       SeparatorVisibility="Default"
                       SeparatorColor="Accent"
@@ -31,7 +31,28 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>-->
+
+            <Image Source="icon.png" HorizontalOptions="Center" Margin="20"/>
+
+            <Label Text="Xamarin Forms Page Builder" FontAttributes="Bold" FontSize="Large" Margin="10,0" HorizontalTextAlignment="Center" />
+            <Label Text="OpenSource Page Builder App." Opacity="0.8"/>
+
+
+
+            <TableView>
+                <TableSection Title="">
+                    <ImageCell ImageSource="code.png" Text="Visit on GitHub" Command="{Binding Navigation.OpenUriCommand}">
+                        <ImageCell.CommandParameter>
+                            https://github.com/enisn/XamarinForms.PageBuilder
+                        </ImageCell.CommandParameter>
+                    </ImageCell>
+                    <ImageCell ImageSource="info.png" Text="About" />
+                </TableSection>
+            </TableView>
+            
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -19,8 +19,8 @@
                 <Label Margin="5,2" Text="{Binding Control,Converter={StaticResource NameConverter}}"  FontSize="Micro" HorizontalOptions="Center"/>
                 <StackLayout Padding="10,0">
                     <Button Text="Remove Control" BackgroundColor="Red" Command="{Binding RemoveControlCommand}" HorizontalOptions="FillAndExpand" TextColor="White"/>
-                    <Button IsVisible="{Binding DoesHaveContent}" Command="{Binding SetContentCommand}" Text="Set Content" HorizontalOptions="FillAndExpand"/>
                     <Button IsVisible="{Binding DoesHaveChildren}" Command="{Binding AddChildrenCommand}" Text="Add Children" HorizontalOptions="FillAndExpand" />
+                    <Button IsVisible="{Binding DoesHaveContent}" Command="{Binding SetContentCommand}" Text="Set Content" HorizontalOptions="FillAndExpand"/>
                     <Button IsVisible="{Binding DoesHaveChildren}" Command="{Binding ClearChildrenCommand}" Text="Clear Children" BackgroundColor="Accent" HorizontalOptions="FillAndExpand" TextColor="White"/>
                     <Button IsVisible="{Binding DoesHaveContent}" Command="{Binding ClearContentCommand}" Text="Clear Content" BackgroundColor="Accent" HorizontalOptions="FillAndExpand" TextColor="White"/>
                 </StackLayout>
