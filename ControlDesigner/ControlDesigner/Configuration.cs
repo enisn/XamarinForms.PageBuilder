@@ -11,17 +11,20 @@ namespace ControlDesigner
         {
             typeof(Label) ,
             typeof(Button),
-            typeof(Slider),
+            typeof(BoxView),
             typeof(Entry),
-            typeof(Editor),
+            typeof(Slider),
             typeof(Frame),
+            typeof(Editor),
             typeof(Stepper),
             typeof(SearchBar),
             typeof(ProgressBar),
             typeof(Picker),
             typeof(Image),
             typeof(DatePicker),
-            typeof(BoxView),
+            typeof(StackLayout),
+            typeof(FlexLayout),
+            typeof(Grid),
         };
     }
 }
