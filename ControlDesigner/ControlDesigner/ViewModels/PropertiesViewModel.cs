@@ -13,6 +13,31 @@ namespace ControlDesigner.ViewModels
 {
     public class PropertiesViewModel : BaseViewModel
     {
+        #region StaticArea
+        public static void OnChildrenAdded(object sender, ElementEventArgs e)
+        {
+            (e.Element as View).GestureRecognizers.Clear();
+            (e.Element as View).GestureRecognizers.Add(new TapGestureRecognizer
+            {
+                Command = new Command(() => OnTappedAControl(e.Element)),
+            });
+
+            if (e.Element is VisualElement)
+            {
+                (e.Element as VisualElement).Focused += (s, args) => OnTappedAControl(s);
+                (e.Element as VisualElement).Unfocus();
+            }
+            if (e.Element is Button)
+                (e.Element as Button).Clicked += (s, args) => OnTappedAControl(s);
+        }
+        public static void OnTappedAControl(object control)
+        {
+            NavigationViewModel.Instance.PushPropertiesPopup(control);
+        }
+        #endregion
+
+
+
         private PropertyInfo _propChildren, _propContent;
         private View _control;
         private IList<PropertyViewModel> _propertiesList;
@@ -218,9 +243,11 @@ namespace ControlDesigner.ViewModels
 
         private async void SetContent(object obj)
         {
-            Type controlToAdd = await DialogHelper.PickControlAsync(); //PICK CONTROL
-            var newControl = (View)Activator.CreateInstance(controlToAdd);
+            Type controlType = await DialogHelper.PickControlAsync(); //PICK CONTROL
+            var newControl = (View)Activator.CreateInstance(controlType);
             _propContent.SetValue(this.Control, newControl);
+            if (newControl is Layout)
+                (newControl as Layout).ChildAdded += OnChildrenAdded;
             Navigation.PopPopuopToRoot();
             Navigation.PushPropertiesPopup(newControl);
         }
@@ -236,7 +263,9 @@ namespace ControlDesigner.ViewModels
 
             var newControl = Activator.CreateInstance(controlType);
             (_propChildren.GetValue(this.Control) as IList<View>).Add(newControl as View);
-
+            if (newControl is Layout)
+                (newControl as Layout).ChildAdded += OnChildrenAdded;
+            
             Navigation.PopPopuopToRoot();
             Navigation.PushPropertiesPopup(newControl);
         }
