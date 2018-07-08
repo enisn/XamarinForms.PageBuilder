@@ -12,13 +12,13 @@ using Xamarin.Forms.Xaml;
 namespace ControlDesigner.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ControlDetailPage : EditorPage
+	public partial class PreviewPage : EditorPage
     {
-		public ControlDetailPage()
+		public PreviewPage()
 		{
 			InitializeComponent ();
 		}
-        public ControlDetailPage(object control) : this()
+        public PreviewPage(object control) : this()
         {
             this.BindingContext = new ControlDetailViewModel(control);
         }

@@ -34,6 +34,9 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+                <ListView.Footer>
+                    <Button Text="Save" Command="{Binding SaveCommand}" CornerRadius="20" Margin="20" TextColor="White" BackgroundColor="Accent"/>
+                </ListView.Footer>
             </ListView>
         </StackLayout>
     </ContentPage.Content>

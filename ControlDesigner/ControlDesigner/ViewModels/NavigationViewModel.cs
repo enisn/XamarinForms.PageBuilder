@@ -55,7 +55,7 @@ namespace ControlDesigner.ViewModels
 
         public void GoControlDetail(object obj)
         {
-            PushPage(new ControlDetailPage(obj));
+            PushPage(new PreviewPage(obj));
         }
 
         public void SetDetail(Page page)

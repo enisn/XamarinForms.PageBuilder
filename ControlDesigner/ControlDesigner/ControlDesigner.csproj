@@ -13,13 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\ControlDetailPage.xaml.cs">
-      <DependentUpon>ControlDetailPage.xaml</DependentUpon>
+    <Compile Update="Views\PreviewPage.xaml.cs">
+      <DependentUpon>PreviewPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\ControlDetailPage.xaml">
+    <EmbeddedResource Update="Views\PreviewPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\LandingPage.xaml">

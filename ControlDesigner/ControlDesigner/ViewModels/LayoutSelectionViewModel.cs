@@ -14,23 +14,27 @@ namespace ControlDesigner.ViewModels
 
         public LayoutSelectionViewModel()
         {
-            LayoutsList = new ObservableCollection<View>()
-            {
-                new FlexLayout(),
-                new StackLayout(),
-                new Grid(),
-                new AbsoluteLayout(),
-                new RelativeLayout(),
-            };
+
+            LayoutsList = LayoutsList != null ?
+                new ObservableCollection<View>(LayoutsList) :
+                new ObservableCollection<View>()
+                {
+                    new FlexLayout(),
+                    new StackLayout(),
+                    new Grid(),
+                    new AbsoluteLayout(),
+                    new RelativeLayout(),
+                };
+
         }
 
         public IList<View> LayoutsList { get => _layoutsList; set { _layoutsList = value; OnPropertyChanged(); } }
         public View SelectedLayout { get => _selectedLayout; set { _selectedLayout = value; LayoutSelected(value); OnPropertyChanged(); } }
-
+        public Command SaveCommand { get; set; }
         private void LayoutSelected(View value)
         {
             if (value == null) return;
-            Navigation.PushPage(new ControlDetailPage(value));
+            Navigation.PushPage(new PreviewPage(value));
         }
     }
 }
