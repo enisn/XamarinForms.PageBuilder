@@ -3,6 +3,7 @@ using ControlDesigner.ViewModels.InnerViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -94,15 +95,22 @@ namespace ControlDesigner.ViewModels
             var reflectedProps = Control.GetType().GetProperties();
             foreach (var property in reflectedProps)
             {
-                if (property.CanRead && property.CanWrite)
-                    PropertiesList.Add(new PropertyViewModel
-                    {
-                        Name = property.Name,
-                        ReflectedProperty = property,
-                        PropertyName = property.Name,
-                        Type = property.PropertyType,
-                        Value = property.GetValue(this.Control)?.ToString(),
-                    });
+                try
+                {
+                    if (property.CanRead && property.CanWrite)
+                        PropertiesList.Add(new PropertyViewModel
+                        {
+                            Name = property.Name,
+                            ReflectedProperty = property,
+                            PropertyName = property.Name,
+                            Type = property.PropertyType,
+                            Value = property.GetValue(this.Control)?.ToString(),
+                        });
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine(ex.ToString());
+                }
             }
         }
 

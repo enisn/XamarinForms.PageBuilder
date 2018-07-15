@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.InputKit.Shared.Controls;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
@@ -32,6 +33,13 @@ namespace ControlDesigner
             typeof(StackLayout),
             typeof(FlexLayout),
             typeof(Grid),
+
+            typeof(CheckBox),
+            typeof(RadioButtonGroupView),
+            typeof(RadioButton),
+            typeof(AdvancedEntry),
+            typeof(AdvancedSlider),
+            typeof(FormView),
         };
     }
 }
