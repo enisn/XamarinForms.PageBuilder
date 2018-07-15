@@ -11,6 +11,7 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="edit.png" Text="Properties" Command="{Binding EditPropertiesCommand}" CommandParameter="{Binding Control}"/>
+        <ToolbarItem Icon="list_icon.png" Text="Page Summary" Clicked="SwipeNextPage"/>
     </ContentPage.ToolbarItems>
 
 </page:EditorPage>

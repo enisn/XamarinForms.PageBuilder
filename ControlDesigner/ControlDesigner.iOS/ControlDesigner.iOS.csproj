@@ -197,4 +197,22 @@
   <ItemGroup>
     <BundleResource Include="Resources\info%403x.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\list_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\list_icon%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\list_icon%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\layout_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\layout_icon%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\layout_icon%403x.png" />
+  </ItemGroup>
 </Project>

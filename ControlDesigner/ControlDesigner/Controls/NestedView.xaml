@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:helper ="clr-namespace:ControlDesigner.Helpers"
+             xmlns:control="clr-namespace:ControlDesigner.Controls"
+             x:Class="ControlDesigner.Controls.NestedView">
+
+    <!--BINDINGCONTEXT MUST BE A VIEW-->
+
+
+    <ContentView.Content>
+        <StackLayout Orientation="Horizontal" Spacing="0">
+            <BoxView VerticalOptions="FillAndExpand" WidthRequest="1" Color="Accent"/>
+            <StackLayout Spacing="0" Padding="0" HorizontalOptions="FillAndExpand">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="Element_Tapped" />
+                </StackLayout.GestureRecognizers>
+                <Label Margin="0,10" Text="{Binding .,Converter={StaticResource NameConverter}}" />
+                <BoxView HeightRequest="1" Color="Accent"/>
+                <StackLayout x:Name="slChildren" Padding="10,0" Spacing="0" >
+
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

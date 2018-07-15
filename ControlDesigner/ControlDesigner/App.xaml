@@ -1,9 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helper="clr-namespace:ControlDesigner.Helpers"
              x:Class="ControlDesigner.App">
 	<Application.Resources>
 		<ResourceDictionary>
+
+            <helper:ViewToNameConverter x:Key="NameConverter" />
+
             <!--Global Styles-->
             <Color x:Key="NavigationPrimary">#2196F3</Color>
             <Style TargetType="NavigationPage">

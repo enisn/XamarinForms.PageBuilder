@@ -27,6 +27,7 @@ namespace ControlDesigner
             typeof(TimePicker),
             typeof(WebView),
 
+            typeof(ContentView),
             typeof(Frame),
             typeof(StackLayout),
             typeof(FlexLayout),

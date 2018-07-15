@@ -34,7 +34,7 @@ namespace ControlDesigner.ViewModels
         private void LayoutSelected(View value)
         {
             if (value == null) return;
-            Navigation.PushPage(new PreviewPage(value));
+            Navigation.PushPage(new EditingPage(value));
         }
     }
 }

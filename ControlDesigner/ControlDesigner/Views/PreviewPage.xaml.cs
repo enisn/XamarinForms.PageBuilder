@@ -22,5 +22,11 @@ namespace ControlDesigner.Views
         {
             this.BindingContext = new ControlDetailViewModel(control);
         }
-	}
+
+        private void SwipeNextPage(object sender, EventArgs e)
+        {
+            if (this.Parent is CarouselPage)
+                (this.Parent as CarouselPage).CurrentPage = (this.Parent as CarouselPage).Children[1];
+        }
+    }
 }
