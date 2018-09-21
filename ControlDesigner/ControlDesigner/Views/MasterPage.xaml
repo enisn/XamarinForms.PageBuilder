@@ -42,12 +42,12 @@
 
             <TableView Margin="20,0">
                 <TableSection Title="">
-                    <ImageCell ImageSource="code.png" Text="Visit on GitHub" Command="{Binding Navigation.OpenUriCommand}">
+                    <ImageCell ImageSource="code.png" Text="View on GitHub" Command="{Binding Navigation.OpenUriCommand}">
                         <ImageCell.CommandParameter>
                             https://github.com/enisn/XamarinForms.PageBuilder
                         </ImageCell.CommandParameter>
                     </ImageCell>
-                    <ImageCell ImageSource="info.png" Text="About" />
+                    <ImageCell ImageSource="info.png" Text="About" Command="{Binding Navigation.GoAboutCommand}" />
                 </TableSection>
             </TableView>
             

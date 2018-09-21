@@ -29,6 +29,7 @@ namespace ControlDesigner
             typeof(WebView),
 
             typeof(ContentView),
+            typeof(ScrollView),
             typeof(Frame),
             typeof(StackLayout),
             typeof(FlexLayout),

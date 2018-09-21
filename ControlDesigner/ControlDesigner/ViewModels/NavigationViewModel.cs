@@ -17,6 +17,7 @@ namespace ControlDesigner.ViewModels
         public Command GoControlDetailCommand { get; set; }
         public Command PushPropertiesPopupCommand { get; private set; }
         public Command OpenUriCommand { get; set; }
+        public Command GoAboutCommand { get; set; }
 
         public Task DisplayAlert(string title, string message, string cancel)
         {
@@ -34,6 +35,21 @@ namespace ControlDesigner.ViewModels
             GoControlDetailCommand = new Command(GoControlDetail);
             PushPropertiesPopupCommand = new Command(PushPropertiesPopup);
             OpenUriCommand = new Command(OpenUri);
+            GoAboutCommand = new Command(GoAbout);
+        }
+
+        private void GoAbout(object obj)
+        {
+            PushPopup(new Frame { BackgroundColor = Color.White, VerticalOptions = LayoutOptions.Center, HorizontalOptions = LayoutOptions.Center, Margin = 25,
+                Content = new StackLayout
+                {
+                    Children =
+                    {
+                        new Label { Text ="Developed by Enis Necipoğlu" , FontAttributes = FontAttributes.Bold, HorizontalOptions = LayoutOptions.Center, TextColor = Color.FromHex("#212121") },
+                        new Button { Text = "CLOSE", BackgroundColor = Color.Transparent, Command = new Command(()=> PopPopup() ) }
+                    }
+                }
+            });
         }
 
         private void OpenUri(object obj)
